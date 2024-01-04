@@ -35,5 +35,8 @@ int main(int argc, char* argv[])
     // END BOARD TEST
   }
 
+  MenuUI menuUI = MenuUI();
+  menuUI.showWelcome();
+
   return 0;
 }

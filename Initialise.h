@@ -2,7 +2,7 @@
 #define INITIALISE_H
 
 // Include libraries
-#include <iostream>
+#include "Tools.h"
 
 // Include Game variables
 #include "Board.h"
