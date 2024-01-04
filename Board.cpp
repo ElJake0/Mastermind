@@ -1,4 +1,5 @@
 #include "Board.h"
+#include "Node.h"
 
 Board::Board()
 {
@@ -31,7 +32,7 @@ void Board::setupBoard(){
   {
     for(int col = 0; col < getBoardWidth(); col++)
     {
-      boardState[row][col] = 'X';
+      boardState[row][col] = EMPTY;
     }
   }
 }
