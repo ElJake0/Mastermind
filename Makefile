@@ -5,7 +5,7 @@ all: mastermind
 clean:
 	rm -rf masermind *.o *.dSYM
 
-mastermind: main.o
+mastermind: main.o Board.o
 	g++ -Wall -Werror -std=c++14 -g -O -o $@ $^
 
 %.o: %.cpp
