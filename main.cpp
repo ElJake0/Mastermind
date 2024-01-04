@@ -15,28 +15,32 @@ int main(int argc, char* argv[])
     // BOARD TEST
     //---------------------------------------
     std::cout << "Board test" << std::endl;
-    Board board = Board();
-    std::cout << "Board height = " << board.getBoardHeight() << std::endl;
-    std::cout << "Board width = " << board.getBoardWidth() << std::endl;
-    board.getBoardState();
+    Board testBoard = Board();
+    std::cout << "Board height = " << testBoard.getBoardHeight() << std::endl;
+    std::cout << "Board width = " << testBoard.getBoardWidth() << std::endl;
+    testBoard.getBoardState();
 
     std::cout << "Adding 'O' to board' at 5,3" << std::endl;
-    board.setBoardCoordinates(5,3,'O');
-    board.getBoardState();
+    testBoard.setBoardCoordinates(5,3,'O');
+    testBoard.getBoardState();
 
-    std::cout << "Adding 'O' to board' at 7,1" << std::endl;
-    board.setBoardCoordinates(7,1,'O');
-    board.getBoardState();
+    std::cout << "Adding 'X' to board' at 7,1" << std::endl;
+    testBoard.setBoardCoordinates(7,1,'X');
+    testBoard.getBoardState();
 
-    std::cout << "Checking board coordinates, expecting X: " << board.getBoardCoordinates(1,2) << std::endl;
-    std::cout << "Checking board coordinates, expecting O: " << board.getBoardCoordinates(5,3) << std::endl;
-    std::cout << "Checking board coordinates, expecting O: " << board.getBoardCoordinates(7,1) << std::endl;
+    std::cout << "Checking board coordinates, expecting X: " << testBoard.getBoardCoordinates(1,2) << std::endl;
+    std::cout << "Checking board coordinates, expecting O: " << testBoard.getBoardCoordinates(5,3) << std::endl;
+    std::cout << "Checking board coordinates, expecting O: " << testBoard.getBoardCoordinates(7,1) << std::endl;
     //---------------------------------------
     // END BOARD TEST
   }
 
   MenuUI menuUI = MenuUI();
   menuUI.showWelcome();
+
+  // Start Game loop
+  menuUI.startGame();
+  
 
   return 0;
 }
