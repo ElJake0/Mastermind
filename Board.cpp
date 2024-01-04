@@ -5,6 +5,7 @@ Board::Board()
 {
   std::cout << "Constructing Board()" << std::endl;
   setupBoard();
+  setCode();
 }
 
 Board::~Board()
@@ -35,6 +36,15 @@ void Board::setupBoard(){
       boardState[row][col] = EMPTY;
     }
   }
+}
+
+void Board::setCode(){
+  // Placeholder for setting the board code
+  char colour[4] = {GREEN, RED, BLUE, PURPLE};
+  setBoardCoordinates(0,0,colour[0]);
+  setBoardCoordinates(0,1,colour[1]);
+  setBoardCoordinates(0,2,colour[2]);
+  setBoardCoordinates(0,3,colour[3]);
 }
 
 void Board::setBoardCoordinates(int row, int col, char value){

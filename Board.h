@@ -20,6 +20,7 @@ class Board
     int boardWidth = 4;
     int boardHeight = 9;
     void setupBoard();
+    void setCode();
 };
 
 #endif // BOARD_H

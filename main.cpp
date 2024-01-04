@@ -39,8 +39,9 @@ int main(int argc, char* argv[])
   menuUI.showWelcome();
 
   // Start Game loop
+  Board board = Board();
   menuUI.startGame();
-  
+  board.getBoardState();
 
   return 0;
 }
