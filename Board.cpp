@@ -29,8 +29,11 @@ void Board::getBoardState()
 }
 
 void Board::setupBoard(){
+  std::cout << "SETTING UP BOARD" << std::endl;
+  boardState.resize(getBoardHeight());
   for(int row = 0; row < getBoardHeight(); row++)
   {
+    boardState.at(row).resize(getBoardWidth());
     for(int col = 0; col < getBoardWidth(); col++)
     {
       boardState[row][col] = EMPTY;

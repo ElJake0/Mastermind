@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <iostream>
+#include "Tools.h"
 
 class Board
 {
@@ -12,7 +12,7 @@ class Board
     int getBoardWidth();
     int getBoardHeight();
     void getBoardState();
-    char boardState[9][4] = {};
+    std::vector<std::vector<char>> boardState;
     char getBoardCoordinates(int row, int col);
     void setBoardCoordinates(int row, int col, char value);
 
