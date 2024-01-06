@@ -18,7 +18,7 @@ int Board::getBoardHeight(){ return boardHeight; }
 
 void Board::getBoardState()
 {
-  for(int row = 0; row < getBoardHeight(); row++)
+  for(int row = getBoardHeight()-1; row > -1; row--)
   {
     for(int col = 0; col < getBoardWidth(); col++)
     {
