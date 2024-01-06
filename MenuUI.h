@@ -2,11 +2,13 @@
 #define MENUUI_H
 
 #include "Tools.h"
+#include <sstream>
 
 class MenuUI {
   public:
-  void showWelcome();
-  void startGame();
+  void ShowWelcome();
+  void StartGame();
+  std::vector<char> TakeGuess();
 
   private:
   std::string welcome;

@@ -44,10 +44,17 @@ void Board::setupBoard(){
 void Board::setCode(){
   // Placeholder for setting the board code
   char colour[4] = {GREEN, RED, BLUE, PURPLE};
-  setBoardCoordinates(0,0,colour[0]);
-  setBoardCoordinates(0,1,colour[1]);
-  setBoardCoordinates(0,2,colour[2]);
-  setBoardCoordinates(0,3,colour[3]);
+  boardState[0][0] = colour[0];
+  boardState[0][1] = colour[1];
+  boardState[0][2] = colour[2];
+  boardState[0][3] = colour[3];
+}
+
+void Board::setGuess(std::vector<char> guess, int attempt){
+  boardState[attempt][0] = guess[0];
+  boardState[attempt][1] = guess[1];
+  boardState[attempt][2] = guess[2];
+  boardState[attempt][3] = guess[3];
 }
 
 void Board::setBoardCoordinates(int row, int col, char value){

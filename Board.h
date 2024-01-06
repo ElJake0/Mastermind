@@ -13,6 +13,7 @@ class Board
     int getBoardHeight();
     void getBoardState();
     std::vector<std::vector<char>> boardState;
+    void setGuess(std::vector<char> guess, int attempt);
     char getBoardCoordinates(int row, int col);
     void setBoardCoordinates(int row, int col, char value);
 

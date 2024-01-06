@@ -15,33 +15,47 @@ int main(int argc, char* argv[])
     // BOARD TEST
     //---------------------------------------
     std::cout << "Board test" << std::endl;
-    Board testBoard = Board();
-    std::cout << "Board height = " << testBoard.getBoardHeight() << std::endl;
-    std::cout << "Board width = " << testBoard.getBoardWidth() << std::endl;
-    testBoard.getBoardState();
+    Board* board = new Board();
+    std::cout << "Board height = " << board->getBoardHeight() << std::endl;
+    std::cout << "Board width = " << board->getBoardWidth() << std::endl;
+    board->getBoardState();
 
     std::cout << "Adding 'O' to board' at 5,3" << std::endl;
-    testBoard.setBoardCoordinates(5,3,'O');
-    testBoard.getBoardState();
+    board->setBoardCoordinates(5,3,'O');
+    board->getBoardState();
 
     std::cout << "Adding 'X' to board' at 7,1" << std::endl;
-    testBoard.setBoardCoordinates(7,1,'X');
-    testBoard.getBoardState();
+    board->setBoardCoordinates(7,1,'X');
+    board->getBoardState();
 
-    std::cout << "Checking board coordinates, expecting X: " << testBoard.getBoardCoordinates(1,2) << std::endl;
-    std::cout << "Checking board coordinates, expecting O: " << testBoard.getBoardCoordinates(5,3) << std::endl;
-    std::cout << "Checking board coordinates, expecting O: " << testBoard.getBoardCoordinates(7,1) << std::endl;
+    std::cout << "Checking board coordinates, expecting blank: " << board->getBoardCoordinates(1,2) << std::endl;
+    std::cout << "Checking board coordinates, expecting O: " << board->getBoardCoordinates(5,3) << std::endl;
+    std::cout << "Checking board coordinates, expecting X: " << board->getBoardCoordinates(7,1) << std::endl;
+    delete board;
     //---------------------------------------
     // END BOARD TEST
   }
 
   MenuUI menuUI = MenuUI();
-  menuUI.showWelcome();
+  menuUI.ShowWelcome();
 
   // Start Game loop
-  Board board = Board();
-  menuUI.startGame();
-  board.getBoardState();
+  Board* board = new Board();
+  menuUI.StartGame();
+  board->getBoardState();
+
+  // Make first guess
+  std::vector<char> userGuess = menuUI.TakeGuess();
+  for(int i=0; i < (int)userGuess.size(); i++)
+  {
+    std::cout << userGuess[i];
+  }
+  board->setGuess(userGuess, 1);
+  board->getBoardState();
+  // guess 2
+  userGuess = menuUI.TakeGuess();
+  board->setGuess(userGuess, 2);
+  board->getBoardState();
 
   return 0;
 }

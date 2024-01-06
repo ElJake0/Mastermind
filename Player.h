@@ -7,8 +7,11 @@ class Player
 {
   public:
     Player();
+    ~Player();
 
-    void
+    std::vector<char> guess;
+    void TakeGuess(std::vector<char> &guess);
+    void ClearGuess();
 };
 
 #endif
